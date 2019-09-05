@@ -28,6 +28,7 @@ namespace Pamola.Viewer
         private void RotateButton_MouseEnter(object sender, MouseEventArgs e)
         {
             RotateButton.Background = new SolidColorBrush(Colors.LightSkyBlue);
+            RotateButton.Background = new SolidColorBrush(Colors.LightSkyBlue);
         }
 
         private void RotateButton_MouseLeave(object sender, MouseEventArgs e)
