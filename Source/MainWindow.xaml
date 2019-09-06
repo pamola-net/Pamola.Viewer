@@ -1,21 +1,61 @@
-﻿<Window x:Class="Pamola.Viewer.MainWindow"
+﻿<Controls:MetroWindow  x:Class="Pamola.Viewer.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pamola.Viewer"
-        mc:Ignorable="d"
-        Title="Pamola Phasor Viewer" Height="450" Width="800" Background="Silver">
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Title="Pamola Phasor Viewer"
+        Height="450" Width="800"
+        ShowMaxRestoreButton="False"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        BorderBrush="LightBlue"
+        BorderThickness="1">
     <Grid>
-        <Button
-            x:Name="RotateButton"
-            Content="Rotate Phasor" 
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Width="120" 
-            Height="35" 
-            Background="LightSkyBlue" 
-            MouseEnter="RotateButton_MouseEnter"
-            MouseLeave="RotateButton_MouseLeave"/>
+        <StackPanel Margin="400,0,0,0" Orientation="Vertical" HorizontalAlignment="Center">
+            <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Center">
+                <DockPanel x:Name="phasorDock">
+                    <TabControl x:Name="phasorTab">
+                        <TabItem x:Name="phasorTab1" Header="Phasor1">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <TextBlock Margin="10" Text="Magnitude:"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <TextBlock Margin="10" Text="Phase:"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </TabItem>
+                    </TabControl>
+                </DockPanel>
+            </StackPanel>
+            <StackPanel Margin="10" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button
+                    x:Name="rotateButton"
+                    Content="Rotate Phasor"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" 
+                    Width="120" 
+                    Height="35" 
+                    Background="LightBlue" 
+                    BorderThickness="0"
+                    MouseEnter="RotateButton_MouseEnter"
+                    MouseLeave="RotateButton_MouseLeave"
+                    Margin="5"/>
+                <Button 
+                    x:Name="addPhasorButton" 
+                    Content="Add Phasor"
+                    HorizontalAlignment="Left" 
+                    Width="120" 
+                    Height="35"  
+                    Background="LightBlue" 
+                    BorderThickness="0"
+                    MouseEnter="AddPhasorButton_MouseEnter"
+                    MouseLeave="AddPhasorButton_MouseLeave"
+                    Margin="5"/>
+            </StackPanel> 
+        </StackPanel>
     </Grid>
-</Window>
+</Controls:MetroWindow>

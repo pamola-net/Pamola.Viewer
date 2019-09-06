@@ -12,13 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
+using MahApps.Metro.IconPacks;
 
 namespace Pamola.Viewer
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow 
     {
         public MainWindow()
         {
@@ -27,13 +29,22 @@ namespace Pamola.Viewer
 
         private void RotateButton_MouseEnter(object sender, MouseEventArgs e)
         {
-            RotateButton.Background = new SolidColorBrush(Colors.LightSkyBlue);
-            RotateButton.Background = new SolidColorBrush(Colors.LightSkyBlue);
+            rotateButton.BorderThickness = new Thickness(2);
         }
 
         private void RotateButton_MouseLeave(object sender, MouseEventArgs e)
         {
-            RotateButton.Background = new SolidColorBrush(Colors.LightBlue);
+            rotateButton.BorderThickness = new Thickness(0);
+        }
+
+        private void AddPhasorButton_MouseEnter(object sender, MouseEventArgs e)
+        {
+            addPhasorButton.BorderThickness = new Thickness(2);
+        }
+
+        private void AddPhasorButton_MouseLeave(object sender, MouseEventArgs e)
+        {
+            addPhasorButton.BorderThickness = new Thickness(0);
         }
     }
 }
