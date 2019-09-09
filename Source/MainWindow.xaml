@@ -21,10 +21,46 @@
                         <TabItem x:Name="phasorTab1" Header="Phasor1">
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <TextBlock Margin="10" Text="Magnitude:"></TextBlock>
+                                    <TextBlock 
+                                        Margin="10" 
+                                        Width="100"     
+                                        Text="Magnitude [V/A]:"></TextBlock>
+                                    <Controls:NumericUpDown 
+                                        Minimum="0" 
+                                        Maximum="1000" 
+                                        Interval="0.1" 
+                                        StringFormat="N1"
+                                        Width="120" 
+                                        Height="35" >
+                                    </Controls:NumericUpDown>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <TextBlock Margin="10" Text="Phase:"></TextBlock>
+                                    <TextBlock 
+                                        Margin="10" 
+                                        Width="100"  
+                                        Text="Phase [degrees]:"></TextBlock>
+                                    <Controls:NumericUpDown 
+                                        Minimum="-360" 
+                                        Maximum="360" 
+                                        Interval="0.1" 
+                                        StringFormat="N1"
+                                        Width="120" 
+                                        Height="35" >
+                                    </Controls:NumericUpDown>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <TextBlock 
+                                        Margin="10" 
+                                        Width="100"  
+                                        Text="Frequency [Hz]:"></TextBlock>
+                                    <Controls:NumericUpDown 
+                                        Minimum="0" 
+                                        Maximum="1000" 
+                                        Interval="0.1" 
+                                        StringFormat="N1"
+                                        Width="120" 
+                                        Height="35" >
+                                    </Controls:NumericUpDown>
                                 </StackPanel>
                             </StackPanel>
                         </TabItem>
