@@ -14,61 +14,77 @@
         BorderBrush="LightBlue"
         BorderThickness="1">
     <Grid>
-        <StackPanel Margin="400,0,0,0" Orientation="Vertical" HorizontalAlignment="Center">
-            <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Center">
-                <DockPanel x:Name="phasorDock">
-                    <TabControl x:Name="phasorTab">
-                        <TabItem x:Name="phasorTab1" Header="Phasor1">
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <TextBlock 
+        <Grid Margin="10"
+              HorizontalAlignment="Left">
+            <local:GraphWindows 
+                x:Name="phasorDiagram"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="10" 
+                Height="225"
+                Width="400"></local:GraphWindows>
+        </Grid>
+        <Grid Margin="10" HorizontalAlignment="Right">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Center">
+                    <DockPanel x:Name="phasorDock">
+                        <TabControl x:Name="phasorTab">
+                            <TabItem x:Name="phasorTab1" Header="Phasor1">
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                        <TextBlock 
                                         Margin="10" 
                                         Width="100"     
                                         Text="Magnitude [V/A]:"></TextBlock>
-                                    <Controls:NumericUpDown 
-                                        Minimum="0" 
-                                        Maximum="1000" 
-                                        Interval="0.1" 
-                                        StringFormat="N1"
-                                        Width="120" 
-                                        Height="35" >
-                                    </Controls:NumericUpDown>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <TextBlock 
+                                        <Controls:NumericUpDown 
+                                            x:Name="magnitudeControl"
+                                            Minimum="0" 
+                                            Maximum="1000" 
+                                            Interval="0.1" 
+                                            StringFormat="N1"
+                                            Width="120" 
+                                            Height="35" 
+                                            ValueChanged="MagnitudeControl_ValueChanged">
+                                        </Controls:NumericUpDown>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                        <TextBlock 
                                         Margin="10" 
                                         Width="100"  
                                         Text="Phase [degrees]:"></TextBlock>
-                                    <Controls:NumericUpDown 
-                                        Minimum="-360" 
-                                        Maximum="360" 
-                                        Interval="0.1" 
-                                        StringFormat="N1"
-                                        Width="120" 
-                                        Height="35" >
-                                    </Controls:NumericUpDown>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <TextBlock 
+                                        <Controls:NumericUpDown 
+                                            x:Name="phaseControl"
+                                            Minimum="-360" 
+                                            Maximum="360" 
+                                            Interval="0.1" 
+                                            StringFormat="N1"
+                                            Width="120" 
+                                            Height="35" 
+                                            ValueChanged="PhaseControl_ValueChanged">
+                                            </Controls:NumericUpDown>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                        <TextBlock 
                                         Margin="10" 
                                         Width="100"  
                                         Text="Frequency [Hz]:"></TextBlock>
-                                    <Controls:NumericUpDown 
-                                        Minimum="0" 
-                                        Maximum="1000" 
-                                        Interval="0.1" 
-                                        StringFormat="N1"
-                                        Width="120" 
-                                        Height="35" >
-                                    </Controls:NumericUpDown>
+                                        <Controls:NumericUpDown 
+                                            x:Name="frequencyControl"
+                                            Minimum="0" 
+                                            Maximum="1000" 
+                                            Interval="0.1" 
+                                            StringFormat="N1"
+                                            Width="120" 
+                                            Height="35" >
+                                            </Controls:NumericUpDown>
+                                    </StackPanel>
                                 </StackPanel>
-                            </StackPanel>
-                        </TabItem>
-                    </TabControl>
-                </DockPanel>
-            </StackPanel>
-            <StackPanel Margin="10" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button
+                            </TabItem>
+                        </TabControl>
+                    </DockPanel>
+                </StackPanel>
+                <StackPanel Margin="10" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button
                     x:Name="rotateButton"
                     Content="Rotate Phasor"
                     HorizontalAlignment="Left" 
@@ -80,7 +96,7 @@
                     MouseEnter="RotateButton_MouseEnter"
                     MouseLeave="RotateButton_MouseLeave"
                     Margin="5"/>
-                <Button 
+                    <Button 
                     x:Name="addPhasorButton" 
                     Content="Add Phasor"
                     HorizontalAlignment="Left" 
@@ -91,7 +107,8 @@
                     MouseEnter="AddPhasorButton_MouseEnter"
                     MouseLeave="AddPhasorButton_MouseLeave"
                     Margin="5"/>
-            </StackPanel> 
-        </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Controls:MetroWindow>
